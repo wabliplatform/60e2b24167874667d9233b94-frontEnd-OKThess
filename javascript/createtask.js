@@ -1,0 +1,3 @@
+let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';let task = new TempApi.Task();document.getElementById('io2z2k').onclick = (event) => {
+    event.preventDefault();
+    task['tname'] = document.querySelector("[annotationname = 'tname']").value;task['ttype'] = document.querySelector("[annotationname = 'ttype']").value;task['tperson'] = document.querySelector("[annotationname = 'tperson']").value;task['tpriority'] = document.querySelector("[annotationname = 'tpriority']").value;apiTaskApi.createtask( task, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); {   location.href= '/Home' ;}}});};window.onload = () => {};
