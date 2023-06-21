@@ -1,4 +1,23 @@
-let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';document.getElementById('ijefml').onclick = (event) => {
+let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';document.getElementById('ieao7').onclick = (event) => {
+    event.preventDefault();
+    {  
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document.getElementById(key) !== null &&
+          document
+            .getElementById(key)
+            .contains(document.getElementById("ieao7")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/edittask/' + transitionId;}};document.getElementById('ijefml').onclick = (event) => {
     event.preventDefault();
     {   location.href= '/createtask' ;}};window.onload = () => {apiTaskApi.getAlltask((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("ihfj").querySelectorAll( "[dataitem='true']" )].filter(
     (element, index, array) =>
