@@ -114,9 +114,7 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
           parentId = key;
         }
       });
-     location.href= '/editmytasks/' + transitionId;}};document.getElementById('ijefml').onclick = (event) => {
-    event.preventDefault();
-    {   location.href= '/createtask' ;}};window.onload = () => {const filtergetmytasks = {tperson: { $eq: "Ilias"}}; apiTaskApi.getByParamstask( filtergetmytasks, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("ihfj").querySelectorAll( "[dataitem='true']" )].filter(
+     location.href= '/editmytasks/' + transitionId;}};window.onload = () => {let taskId = window.location.pathname.replace('/mytasks/','');apiTaskApi.gettask( taskId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); try { document.querySelector('[annotationname = tname]').textContent = response.body.query.tname; } catch (e) { console.log(e) };try { document.querySelector('[annotationname = ttype]').textContent = response.body.query.ttype; } catch (e) { console.log(e) };}});const filtergetmytasks = {tperson: { $eq: "Ilias"}}; apiTaskApi.getByParamstask( filtergetmytasks, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("ihfj").querySelectorAll( "[dataitem='true']" )].filter(
     (element, index, array) =>
     !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
   );const map = new Map();  data.forEach((item,i) => {
@@ -133,13 +131,13 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
         
       }
      } catch (e) { console.log(e) };try { 
-      const insideSubDataElement = subDataElements[i].querySelector("[annotationname = 'tperson']");
+      const insideSubDataElement = subDataElements[i].querySelector("[annotationname = 'ttype']");
       if(insideSubDataElement !== null){
-        insideSubDataElement.textContent = data[data.length -i -1].tperson;
+        insideSubDataElement.textContent = data[data.length -i -1].ttype;
         
       }
-      else if(subDataElements[i].getAttribute('annotationname') === 'tperson'){
-        subDataElements[i].textContent = data[data.length -i -1].tperson;
+      else if(subDataElements[i].getAttribute('annotationname') === 'ttype'){
+        subDataElements[i].textContent = data[data.length -i -1].ttype;
         
       }
      } catch (e) { console.log(e) };
