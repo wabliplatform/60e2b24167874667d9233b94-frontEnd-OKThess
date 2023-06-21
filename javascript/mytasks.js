@@ -21,8 +21,8 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
       });
      location.href= '/edittask/' + transitionId;}};document.getElementById('ig17l').onclick = (event) => {
     event.preventDefault();
-    let taskId = window.location.pathname.replace('/Home/','');
-      if(taskId === '/Home' || taskId === ''){
+    let taskId = window.location.pathname.replace('/mytasks/','');
+      if(taskId === '/mytasks' || taskId === ''){
         let parentId = "";
         const storedData = window.localStorage.getItem('data');
         const newMap = new Map(JSON.parse(storedData));
@@ -135,7 +135,7 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
       });
      location.href= '/edittask/' + transitionId;}};document.getElementById('ijefml').onclick = (event) => {
     event.preventDefault();
-    {   location.href= '/createtask' ;}};window.onload = () => {apiTaskApi.getAlltask((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("ihfj").querySelectorAll( "[dataitem='true']" )].filter(
+    {   location.href= '/createtask' ;}};window.onload = () => {const filtergetmytasks = {undefined: { $eq: "Ilias"}} ; apiTaskApi.getByParamstask( filtergetmytasks, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("ihfj").querySelectorAll( "[dataitem='true']" )].filter(
     (element, index, array) =>
     !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
   );const map = new Map();  data.forEach((item,i) => {
@@ -152,16 +152,6 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
         
       }
      } catch (e) { console.log(e) };try { 
-      const insideSubDataElement = subDataElements[i].querySelector("[annotationname = 'ttype']");
-      if(insideSubDataElement !== null){
-        insideSubDataElement.textContent = data[data.length -i -1].ttype;
-        
-      }
-      else if(subDataElements[i].getAttribute('annotationname') === 'ttype'){
-        subDataElements[i].textContent = data[data.length -i -1].ttype;
-        
-      }
-     } catch (e) { console.log(e) };try { 
       const insideSubDataElement = subDataElements[i].querySelector("[annotationname = 'tperson']");
       if(insideSubDataElement !== null){
         insideSubDataElement.textContent = data[data.length -i -1].tperson;
@@ -169,16 +159,6 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
       }
       else if(subDataElements[i].getAttribute('annotationname') === 'tperson'){
         subDataElements[i].textContent = data[data.length -i -1].tperson;
-        
-      }
-     } catch (e) { console.log(e) };try { 
-      const insideSubDataElement = subDataElements[i].querySelector("[annotationname = 'tpriority']");
-      if(insideSubDataElement !== null){
-        insideSubDataElement.textContent = data[data.length -i -1].tpriority;
-        
-      }
-      else if(subDataElements[i].getAttribute('annotationname') === 'tpriority'){
-        subDataElements[i].textContent = data[data.length -i -1].tpriority;
         
       }
      } catch (e) { console.log(e) };
