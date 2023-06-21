@@ -1,4 +1,6 @@
-let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';document.getElementById('ict7u6').onclick = (event) => {
+let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';document.getElementById('iub58j').onclick = (event) => {
+    event.preventDefault();
+    {   location.href= '/Home' ;}};document.getElementById('ict7u6').onclick = (event) => {
     event.preventDefault();
     {   location.href= '/createtask' ;}};document.getElementById('ieao7').onclick = (event) => {
     event.preventDefault();
@@ -19,26 +21,7 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
           parentId = key;
         }
       });
-     location.href= '/edittask/' + transitionId;}};document.getElementById('ig17l').onclick = (event) => {
-    event.preventDefault();
-    let taskId = window.location.pathname.replace('/Home/','');
-      if(taskId === '/Home' || taskId === ''){
-        let parentId = "";
-        const storedData = window.localStorage.getItem('data');
-        const newMap = new Map(JSON.parse(storedData));
-        newMap.forEach((value, key) => {
-          if (
-            document
-              .getElementById(key)
-              .contains(document.getElementById("ig17l")) === true &&
-              document.getElementById(key).contains(document.getElementById(parentId)) === false
-          ) {
-            taskId = value._id;
-            parentId = key;
-          }
-        });
-      }
-    apiTaskApi.deletetask( taskId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');}});};document.getElementById('ia0ai').onclick = (event) => {
+     location.href= '/edittask/' + transitionId;}};document.getElementById('ia0ai').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -57,7 +40,7 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
           parentId = key;
         }
       });
-     location.href= '/edittask/' + transitionId;}};document.getElementById('ij7zb').onclick = (event) => {
+     location.href= '/edittask/' + transitionId;}};document.getElementById('i882k2').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -69,64 +52,7 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
           document.getElementById(key) !== null &&
           document
             .getElementById(key)
-            .contains(document.getElementById("ij7zb")) === true &&
-            document.getElementById(key).contains(document.getElementById(parentId)) === false
-        ) {
-          transitionId = value._id;
-          parentId = key;
-        }
-      });
-     location.href= '/edittask/' + transitionId;}};document.getElementById('ivtot').onclick = (event) => {
-    event.preventDefault();
-    {  
-      let transitionId = window.location.href.split('/').at(-1);
-      let parentId = "";
-      const storedData = window.localStorage.getItem("data");
-      const newMap = new Map(JSON.parse(storedData));
-      newMap.forEach((value, key) => {
-        if (
-          document.getElementById(key) !== null &&
-          document
-            .getElementById(key)
-            .contains(document.getElementById("ivtot")) === true &&
-            document.getElementById(key).contains(document.getElementById(parentId)) === false
-        ) {
-          transitionId = value._id;
-          parentId = key;
-        }
-      });
-     location.href= '/edittask/' + transitionId;}};document.getElementById('i8unbc').onclick = (event) => {
-    event.preventDefault();
-    {  
-      let transitionId = window.location.href.split('/').at(-1);
-      let parentId = "";
-      const storedData = window.localStorage.getItem("data");
-      const newMap = new Map(JSON.parse(storedData));
-      newMap.forEach((value, key) => {
-        if (
-          document.getElementById(key) !== null &&
-          document
-            .getElementById(key)
-            .contains(document.getElementById("i8unbc")) === true &&
-            document.getElementById(key).contains(document.getElementById(parentId)) === false
-        ) {
-          transitionId = value._id;
-          parentId = key;
-        }
-      });
-     location.href= '/edittask/' + transitionId;}};document.getElementById('inkf6s').onclick = (event) => {
-    event.preventDefault();
-    {  
-      let transitionId = window.location.href.split('/').at(-1);
-      let parentId = "";
-      const storedData = window.localStorage.getItem("data");
-      const newMap = new Map(JSON.parse(storedData));
-      newMap.forEach((value, key) => {
-        if (
-          document.getElementById(key) !== null &&
-          document
-            .getElementById(key)
-            .contains(document.getElementById("inkf6s")) === true &&
+            .contains(document.getElementById("i882k2")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;

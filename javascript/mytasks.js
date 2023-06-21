@@ -19,26 +19,7 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
           parentId = key;
         }
       });
-     location.href= '/edittask/' + transitionId;}};document.getElementById('ig17l').onclick = (event) => {
-    event.preventDefault();
-    let taskId = window.location.pathname.replace('/mytasks/','');
-      if(taskId === '/mytasks' || taskId === ''){
-        let parentId = "";
-        const storedData = window.localStorage.getItem('data');
-        const newMap = new Map(JSON.parse(storedData));
-        newMap.forEach((value, key) => {
-          if (
-            document
-              .getElementById(key)
-              .contains(document.getElementById("ig17l")) === true &&
-              document.getElementById(key).contains(document.getElementById(parentId)) === false
-          ) {
-            taskId = value._id;
-            parentId = key;
-          }
-        });
-      }
-    apiTaskApi.deletetask( taskId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');}});};document.getElementById('ia0ai').onclick = (event) => {
+     location.href= '/editmytasks/' + transitionId;}};document.getElementById('ia0ai').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -57,7 +38,7 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
           parentId = key;
         }
       });
-     location.href= '/edittask/' + transitionId;}};document.getElementById('ij7zb').onclick = (event) => {
+     location.href= '/editmytasks/' + transitionId;}};document.getElementById('ij7zb').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -76,7 +57,7 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
           parentId = key;
         }
       });
-     location.href= '/edittask/' + transitionId;}};document.getElementById('ivtot').onclick = (event) => {
+     location.href= '/editmytasks/' + transitionId;}};document.getElementById('ivtot').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -95,7 +76,7 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
           parentId = key;
         }
       });
-     location.href= '/edittask/' + transitionId;}};document.getElementById('i8unbc').onclick = (event) => {
+     location.href= '/editmytasks/' + transitionId;}};document.getElementById('i8unbc').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -114,7 +95,7 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
           parentId = key;
         }
       });
-     location.href= '/edittask/' + transitionId;}};document.getElementById('inkf6s').onclick = (event) => {
+     location.href= '/editmytasks/' + transitionId;}};document.getElementById('inkf6s').onclick = (event) => {
     event.preventDefault();
     {  
       let transitionId = window.location.href.split('/').at(-1);
@@ -133,9 +114,9 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
           parentId = key;
         }
       });
-     location.href= '/edittask/' + transitionId;}};document.getElementById('ijefml').onclick = (event) => {
+     location.href= '/editmytasks/' + transitionId;}};document.getElementById('ijefml').onclick = (event) => {
     event.preventDefault();
-    {   location.href= '/createtask' ;}};window.onload = () => {const filtergetmytasks = {undefined: { $eq: "Ilias"}} ; apiTaskApi.getByParamstask( filtergetmytasks, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("ihfj").querySelectorAll( "[dataitem='true']" )].filter(
+    {   location.href= '/createtask' ;}};window.onload = () => {const filtergetmytasks = {tperson: { $eq: "Ilias"}}; apiTaskApi.getByParamstask( filtergetmytasks, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("ihfj").querySelectorAll( "[dataitem='true']" )].filter(
     (element, index, array) =>
     !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
   );const map = new Map();  data.forEach((item,i) => {

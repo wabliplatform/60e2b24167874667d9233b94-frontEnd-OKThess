@@ -84,6 +84,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property tstatus (base name: "tstatus")', function() {
+      // uncomment below and update the code to test the property tstatus
+      //var instance = new TempApi.Task();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

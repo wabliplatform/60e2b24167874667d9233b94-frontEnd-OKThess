@@ -6,6 +6,7 @@ module.exports = {
 	'createtask' : './javascript/createtask.js',
 	'edittask' : './javascript/edittask.js',
 	'mytasks' : './javascript/mytasks.js',
+	'editmytasks' : './javascript/editmytasks.js',
 },
   output: {
     path: path.resolve(__dirname, 'dist'),

@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **ttype** | **String** |  | 
 **tperson** | **String** |  | 
 **tpriority** | **String** |  | 
+**tstatus** | **String** |  | 
 
 

@@ -26,10 +26,11 @@ class Task {
      * @param ttype {String} 
      * @param tperson {String} 
      * @param tpriority {String} 
+     * @param tstatus {String} 
      */
-    constructor(tname, ttype, tperson, tpriority) { 
+    constructor(tname, ttype, tperson, tpriority, tstatus) { 
         
-        Task.initialize(this, tname, ttype, tperson, tpriority);
+        Task.initialize(this, tname, ttype, tperson, tpriority, tstatus);
     }
 
     /**
@@ -37,11 +38,12 @@ class Task {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, tname, ttype, tperson, tpriority) { 
+    static initialize(obj, tname, ttype, tperson, tpriority, tstatus) { 
         obj['tname'] = tname;
         obj['ttype'] = ttype;
         obj['tperson'] = tperson;
         obj['tpriority'] = tpriority;
+        obj['tstatus'] = tstatus;
     }
 
     /**
@@ -69,6 +71,9 @@ class Task {
             }
             if (data.hasOwnProperty('tpriority')) {
                 obj['tpriority'] = ApiClient.convertToType(data['tpriority'], 'String');
+            }
+            if (data.hasOwnProperty('tstatus')) {
+                obj['tstatus'] = ApiClient.convertToType(data['tstatus'], 'String');
             }
         }
         return obj;
@@ -101,6 +106,11 @@ Task.prototype['tperson'] = undefined;
  * @member {String} tpriority
  */
 Task.prototype['tpriority'] = undefined;
+
+/**
+ * @member {String} tstatus
+ */
+Task.prototype['tstatus'] = undefined;
 
 
 
